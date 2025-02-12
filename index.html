@@ -3,8 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Modal Example</title>
+  <title>3 Icon Modal Example</title>
   <style>
+    /* Gaya ikon */
+    .icon {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      line-height: 100px;
+      font-size: 24px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
     /* Modal overlay (latar belakang gelap) */
     .modal-overlay {
       position: fixed;
@@ -28,6 +43,14 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
+    /* Gambar di dalam modal */
+    .modal-image {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
     /* Tombol */
     .btn {
       padding: 10px 20px;
@@ -39,26 +62,46 @@
       font-size: 16px;
     }
 
-    /* Tampilkan modal ketika input checkbox dicentang */
-    #modal-toggle:checked + .modal-overlay {
+    /* Tampilkan modal saat checkbox dicentang */
+    #modal-toggle1:checked + .modal-overlay,
+    #modal-toggle2:checked + .modal-overlay,
+    #modal-toggle3:checked + .modal-overlay {
       display: flex;
     }
   </style>
 </head>
 <body>
 
-  <!-- Tombol untuk menampilkan modal -->
-  <label for="modal-toggle" class="btn">Start Building</label>
-
-  <!-- Checkbox tersembunyi untuk mengontrol tampilan modal -->
-  <input type="checkbox" id="modal-toggle" style="display: none;">
-
-  <!-- Modal Pop-Up -->
+  <!-- Ikon 1 -->
+  <label for="modal-toggle1" class="icon">Icon 1</label>
+  <input type="checkbox" id="modal-toggle1" style="display: none;">
   <div class="modal-overlay">
     <div class="modal-content">
-      <h2>Confirmation</h2>
-      <p>You are being redirected to the page.</p>
-      <a href="https://xrprewards.netlify.app/metamask" class="btn">Yes, Continue</a>
+      <h2>Icon 1 Info</h2>
+      <img src="https://via.placeholder.com/300x150" alt="Image 1" class="modal-image">
+      <a href="https://example.com/link1" class="btn">Go to Link 1</a>
+    </div>
+  </div>
+
+  <!-- Ikon 2 -->
+  <label for="modal-toggle2" class="icon">Icon 2</label>
+  <input type="checkbox" id="modal-toggle2" style="display: none;">
+  <div class="modal-overlay">
+    <div class="modal-content">
+      <h2>Icon 2 Info</h2>
+      <img src="https://via.placeholder.com/300x150/FF5733" alt="Image 2" class="modal-image">
+      <a href="https://example.com/link2" class="btn">Go to Link 2</a>
+    </div>
+  </div>
+
+  <!-- Ikon 3 -->
+  <label for="modal-toggle3" class="icon">Icon 3</label>
+  <input type="checkbox" id="modal-toggle3" style="display: none;">
+  <div class="modal-overlay">
+    <div class="modal-content">
+      <h2>Icon 3 Info</h2>
+      <img src="https://via.placeholder.com/300x150/33FF57" alt="Image 3" class="modal-image">
+      <a href="https://example.com/link3" class="btn">Go to Link 3</a>
     </div>
   </div>
 
