@@ -3,7 +3,7 @@ name: Deploy to Surge
 on:
   push:
     branches:
-      - main  # Menyesuaikan dengan branch utama kamu
+      - main  # Ganti dengan branch utama jika bukan "main"
 
 jobs:
   deploy:
@@ -22,6 +22,6 @@ jobs:
 
       - name: Deploy to Surge
         env:
-  SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
-  SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+          SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         run: surge --project ./ --domain various-engine.surge.sh
