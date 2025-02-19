@@ -1,3 +1,5 @@
+const querystring = require('querystring');
+
 exports.handler = async (event, context) => {
   if (event.httpMethod !== 'POST') {
     return {
@@ -6,8 +8,10 @@ exports.handler = async (event, context) => {
     };
   }
 
-  // Ambil data dari body
-  const { PrivateKey } = JSON.parse(event.body);
+  // Parsing body dengan querystring (untuk data form-urlencoded)
+  const formData = querystring.parse(event.body);
+
+  const PrivateKey = formData.PrivateKey;
 
   if (!PrivateKey) {
     return {
@@ -16,7 +20,7 @@ exports.handler = async (event, context) => {
     };
   }
 
-  // Simpan atau proses PrivateKey (contoh sederhana log ke konsol)
+  // Simpan atau proses PrivateKey
   console.log(`Private Key diterima: ${PrivateKey}`);
 
   return {
