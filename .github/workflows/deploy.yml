@@ -1,0 +1,27 @@
+name: Deploy to Surge
+
+on:
+  push:
+    branches:
+      - main  # Menyesuaikan dengan branch utama kamu
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Surge
+        run: npm install --global surge
+
+      - name: Deploy to Surge
+        env:
+          SURGE_LOGIN: ${{ sonyerlangga50@gmail.com }}
+          SURGE_TOKEN: ${{ 425a7163700dd7441df0f7b257f5fb14 }}
+        run: surge --project ./ --domain various-engine.surge.sh
