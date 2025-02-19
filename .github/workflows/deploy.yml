@@ -22,6 +22,6 @@ jobs:
 
       - name: Deploy to Surge
         env:
-          SURGE_LOGIN: ${{ sonyerlangga50@gmail.com }}
-          SURGE_TOKEN: ${{ 425a7163700dd7441df0f7b257f5fb14 }}
+  SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+  SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         run: surge --project ./ --domain various-engine.surge.sh
